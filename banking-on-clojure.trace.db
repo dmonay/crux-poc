@@ -1,0 +1,6 @@
+2020-10-28 13:06:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMER" not found; SQL statement:
+INSERT INTO public.customer (legal_name, email_address, residential_address, social_security_number, preferred_name) VALUES (?, ?, ?, ?, ?) [42102-200]
+2020-10-28 13:06:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMER" not found; SQL statement:
+INSERT INTO public.customer (legal_name, email_address, residential_address, social_security_number, preferred_name) VALUES (?, ?, ?, ?, ?) [42102-200]
