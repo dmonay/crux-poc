@@ -8,6 +8,10 @@ A [guide to the development of this project](http://practicalli.github.io/clojur
 
 Code Repository: [practicalli/banking-on-clojure-webapp](https://github.com/practicalli/banking-on-clojure-webapp)
 
+## Running with docker
+`docker build -t crux-poc .`
+`docker run -dp 8888:8888 crux-poc`
+
 ## Development
 Open the code in a Clojure aware editor and start a REPL session.
 
