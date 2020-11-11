@@ -1,0 +1,44 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj::user=>
+
+; Jack-in done.
+clj::user=>
+(+ 5 3)
+8
+clj::user=>
+#'practicalli.banking-on-clojure/environment-variables
+clj::practicalli.banking-on-clojure=>
+; Syntax error reading source at (REPL:91:29).
+; Unmatched delimiter: )
+clojure.main/repl (main.clj:433)
+clojure.main/repl (main.clj:432)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:202)
+nrepl.middleware.session/session-exec (session.clj:201)
+java.lang.Thread/run (Thread.java:832)
+clj::practicalli.banking-on-clojure=>
+#'practicalli.data.specs/system-properties
+clj::practicalli.data.specs=>
+nil
+clj::practicalli.banking-on-clojure=>
+{"java.specification.version" "15", "sun.jnu.encoding" "UTF-8", "java.class.path" "src:resources:/Users/dima/.m2/repository/cider/cider-nrepl/0.23.0/cider-nrepl-0.23.0.jar:/Users/dima/.m2/repository/clj-kondo/clj-kondo/2020.04.05/clj-kondo-2020.04.05.jar:/Users/dima/.m2/repository/compojure/compojure/1.6.1/compojure-1.6.1.jar:/Users/dima/.m2/repository/hiccup/hiccup/2.0.0-alpha2/hiccup-2.0.0-alpha2.jar:/Users/dima/.m2/repository/http-kit/http-kit/2.3.0/http-kit-2.3.0.jar:/Users/dima/.m2/repository/juxt/crux-core/20.09-1.12.1-beta/crux-core-20.09-1.12.1-beta.jar:/Users/dima/.m2/repository/nrepl/nrepl/0.8.2/nrepl-0.8.2.jar:/Users/dima/.m2/repository/org/clojure/clojure/1.10.1/clojure-1.10.1.jar:/Users/dima/.m2/repository/ring/ring-core/1.8.1/ring-core-1.8.1.jar:/Users/dima/.m2/repository/ring/ring-devel/1.8.1/ring-devel-1.8.1.jar:/Users/dima/.m2/repository/cheshire/cheshire/5.8.1/cheshire-5.8.1.jar:/Users/dima/.m2/repository/com/cognitect/transit-clj/0.8.313/transit-clj-0.8.313.jar:/Users/dima/.m2/repository/io/lambdaforge/datalog-parser/0.1.1/datalog-parser-0.1.1.jar:/Users/dima/.m2/repository/clout/clout/2.2.1/clout-2.2.1.jar:/Users/dima/.m2/repository/medley/medley/1.0.0/medley-1.0.0.jar:/Users/dima/.m2/repository/org/clojure/tools.macro/0.1.5/tools.macro-0.1.5.jar:/Users/dima/.m2/repository/com/stuartsierra/dependency/0.2.0/dependency-0.2.0.jar:/Users/dima/.m2/repository/com/taoensso/nippy/2.15.1/nippy-2.15.1.jar:/Users/dima/.m2/repository/edn-query-language/eql/1.0.0/eql-1.0.0.jar:/Users/dima/.m2/repository/org/agrona/agrona/1.0.7/agrona-1.0.7.jar:/Users/dima/.m2/repository/org/clojure/data.json/1.0.0/data.json-1.0.0.jar:/Users/dima/.m2/repository/org/clojure/spec.alpha/0.2.176/spec.alpha-0.2.176.jar:/Users/dima/.m2/repository/org/clojure/tools.cli/1.0.194/tools.cli-1.0.194.jar:/Users/dima/.m2/repository/org/clojure/tools.logging/1.1.0/tools.logging-1.1.0.jar:/Users/dima/.m2/repository/org/clojure/tools.reader/1.3.2/tools.reader-1.3.2.jar:/Users/dima/.m2/repository/org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar:/Users/dima/.m2/repository/org/clojure/core.specs.alpha/0.2.44/core.specs.alpha-0.2.44.jar:/Users/dima/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar:/Users/dima/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/dima/.m2/repository/crypto-equality/crypto-equality/1.0.0/crypto-equality-1.0.0.jar:/Users/dima/.m2/repository/crypto-random/crypto-random/1.2.0/crypto-random-1.2.0.jar:/Users/dima/.m2/repository/ring/ring-codec/1.1.2/ring-codec-1.1.2.jar:/Users/dima/.m2/repository/clj-stacktrace/clj-stacktrace/0.2.8/clj-stacktrace-0.2.8.jar:/Users/dima/.m2/repository/ns-tracker/ns-tracker/0.4.0/ns-tracker-0.4.0.jar:/Users/dima/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.6/jackson-core-2.9.6.jar:/Users/dima/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.9.6/jackson-dataformat-cbor-2.9.6.jar:/Users/dima/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.9.6/jackson-dataformat-smile-2.9.6.jar:/Users/dima/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar:/Users/dima/.m2/repository/com/cognitect/transit-java/0.8.337/transit-java-0.8.337.jar:/Users/dima/.m2/repository/instaparse/instaparse/1.4.8/instaparse-1.4.8.jar:/Users/dima/.m2/repository/com/taoensso/encore/2.124.0/encore-2.124.0.jar:/Users/dima/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.jar:/Users/dima/.m2/repository/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar:/Users/dima/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar:/Users/dima/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/dima/.m2/repository/org/clojure/java.classpath/0.3.0/java.classpath-0.3.0.jar:/Users/dima/.m2/repository/org/clojure/tools.namespace/0.2.11/tools.namespace-0.2.11.jar:/Users/dima/.m2/repository/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0.jar:/Users/dima/.m2/repository/org/msgpack/msgpack/0.6.12/msgpack-0.6.12.jar:/Users/dima/.m2/repository/com/taoensso/truss/1.5.0/truss-1.5.0.jar:/Users/dima/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/dima/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar", "java.vm.vendor" "AdoptOpenJDK", "sun.arch.data.model" "64", "java.vendor.url" "https://adoptopenjdk.net/", "user.timezone" "America/New_York", "clojure.basis" ".cpcache/845890852.basis", "java.vm.specification.version" "15", "os.name" "Mac OS X", "sun.java.launcher" "SUN_STANDARD", "user.country" "US", "sun.boot.library.path" "/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home/lib", "sun.java.command" "clojure.main -m nrepl.cmdline --middleware [cider.nrepl/cider-middleware]", "http.nonProxyHosts" "local|*.local|169.254/16|*.169.254/16", "jdk.debug" "release", "sun.cpu.endian" "little", "user.home" "/Users/dima", "user.language" "en", "java.specification.vendor" "Oracle Corporation", "java.version.date" "2020-10-20", "java.home" "/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home", "file.separator" "/", "java.vm.compressedOopsMode" "Zero based", "line.separator" "\n", "java.vm.specification.vendor" "Oracle Corporation", "java.specification.name" "Java Platform API Specification", "sun.management.compiler" "HotSpot 64-Bit Tiered Compilers", "ftp.nonProxyHosts" "local|*.local|169.254/16|*.169.254/16", "java.runtime.version" "15.0.1+9", "user.name" "dima", "path.separator" ":", "os.version" "10.15.7", "java.runtime.name" "OpenJDK Runtime Environment", "file.encoding" "UTF-8", "java.vm.name" "OpenJDK 64-Bit Server VM", "java.vendor.version" "AdoptOpenJDK", "java.vendor.url.bug" "https://github.com/AdoptOpenJDK/openjdk-support/issues", "java.io.tmpdir" "/var/folders/31/rx0b726x0fqcbl3s0df3zkfr0000gn/T/", "java.version" "15.0.1", "user.dir" "/Users/dima/workspace/clojure/banking-on-clojure-webapp", "os.arch" "x86_64", "java.vm.specification.name" "Java Virtual Machine Specification", "java.library.path" "/Users/dima/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.", "java.vm.info" "mixed mode, sharing", "java.vendor" "AdoptOpenJDK", "java.vm.version" "15.0.1+9", "sun.io.unicode.encoding" "UnicodeBig", "apple.awt.UIElement" "true", "socksNonProxyHosts" "local|*.local|169.254/16|*.169.254/16", ...}
+clj::practicalli.banking-on-clojure=>
