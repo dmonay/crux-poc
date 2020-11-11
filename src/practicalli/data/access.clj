@@ -22,8 +22,12 @@
 
   []
 
-  (crux/submit-tx crux [[:crux.tx/put manifest]])
-  (crux/entity (crux/db crux) :manifest))
+  (do
+    (println "SERVICE LAYER: create-record")
+    (crux/submit-tx crux [[:crux.tx/put manifest]])))
+;; => #'practicalli.data.access/create-record
+
+  ;; (crux/entity (crux/db crux) :manifest))
   ; (crux/entity-history (crux/db crux) :manifest :asc))
 
 

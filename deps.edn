@@ -4,6 +4,9 @@
  :deps
  {org.clojure/clojure {:mvn/version "1.10.1"}
 
+  ;; for generating data during dev and debugging
+  org.clojure/test.check {:mvn/version "1.0.0"}
+
   ;; Web Application
   http-kit/http-kit   {:mvn/version "2.3.0"}
   ring/ring-core      {:mvn/version "1.8.1"}
@@ -12,13 +15,8 @@
   hiccup/hiccup       {:mvn/version "2.0.0-alpha2"}
 
   ;; Database
-;   seancorfield/next.jdbc              {:mvn/version "1.1.582"}
-;   camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.1"}
-;   com.h2database/h2                   {:mvn/version "1.4.200"}
-;   org.postgresql/postgresql           {:mvn/version "42.2.16"}
-
-
-  juxt/crux-core {:mvn/version "20.09-1.12.1-beta"}}
+  juxt/crux-core            {:mvn/version "20.09-1.12.1-beta"}
+  edn-query-language/eql    {:mvn/version "1.0.1"}}
 
  :aliases
  {:test

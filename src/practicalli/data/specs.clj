@@ -1,5 +1,12 @@
 (ns practicalli.data.specs
   (:require
+
+   ; here for debugging in repl
+   [crux.api :as crux]
+
+   ; eql for projection syntax:
+
+
    [clojure.spec.alpha     :as spec]
    [clojure.spec.gen.alpha :as spec-gen]))
 
@@ -33,6 +40,9 @@
          :customer/social-security-number]
    :opt [:customer/preferred-name]))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;          OUR CODE           ;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Define attributes that are common to a line item
 (spec/def :line-item/id uuid?)
@@ -48,7 +58,11 @@
 ;; it's a charge because of the entity type, and payment and schedule orders
 ;; can be defined in the application layer.
 ;; 
-;; (spec/def :charge/type "CHARGE")
+;; 
+
+
+
+(spec/def :charge/type #{:CHARGE})
 ;; (spec/def :charge/payment-order 3)
 ;; (spec/def :charge/schedule-order 3)
 
@@ -63,11 +77,13 @@
 
 ;; NOTE: when we need to customize, extend the line-item interface via merge:
 ;; https://clojure.org/guides/spec#_entity_maps                        
-(spec/def :line-item/charge :line-item/common)
+;; (spec/def :line-item/charge :line-item/common)
+(spec/def :line-item/charge (spec/merge :line-item/common
+                                        (spec/keys :req [:charge/type])))
+
 (spec/def :line-item/payment :line-item/common)
 (spec/def :line-item/interest :line-item/common)
 (spec/def :line-item/fee :line-item/common)
-
 
 
 
@@ -75,10 +91,40 @@
 #_{:clj-kondo/ignore [:redefined-var]}
 (comment
 
-  (spec-gen/generate (spec/gen :customer/unregistered))
-  ;; => #:customer{:legal-name "7hl4PT89AO3Pe04958YBWxWH0m6tnG", :email-address "iz83P60EtVM9lMX6zg6", :residential-address "FJ7Mh6nNJviX", :social-security-number "9bYAS85axW42KnOPcPjMtkg06qb4Tr"}
-  (spec-gen/generate (spec/gen :customer/registered))
-  ;; => #:customer{:preferred-name "S8i45tGAgaO60uPVW6q48Emg1", :legal-name "FFsv7pCavtC5V9qD52wO91i9Y", :email-address "6Wl3O11i3L66q800f3JcgkQ7414V0", :residential-address "vzl93YDnD74Zh5", :social-security-number "120J"}
+
+
+  (spec-gen/generate (spec/gen :line-item/charge))
+
+  (do
+    (require '[edn-query-language.core :as eql])
+    (def crux
+      (crux/start-node {}))
+
+    (def charge1
+      {:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c"
+       :account-id "8c899527-fe21-490a-ae45-a58488540806"
+       :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+       :interest-rate 4.5
+       :amount-cents 1800})
+
+    (crux/submit-tx crux [[:crux.tx/put charge1]])
+
+    (crux/q (crux/db crux)
+            '{:find [(eql/project ?line-item/charge [*])]
+              :where [[?line-item/charge :crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c"]]})
+
+
+    (crux/entity-history (crux/db crux) "24e56a67-0559-4baa-a16e-9fab034cc84c" :asc))
+
+
+
+
+
+
+
+
+
+
 
 
   (spec-gen/generate (spec/gen :customer/id))

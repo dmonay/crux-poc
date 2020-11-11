@@ -20,12 +20,14 @@
 
 (defn new-customer
   [customer-details]
-  (create-record))
+  (do
+    (println "HANDLER HELPER: register customer")
+    create-record))
 
 (defn new-account
   [account-details]
-  ; (create-record connection/db-spec-dev :public.account account-details))
-  (create-record))
+  ((println "HANDLER HELPER: register account")
+   create-record))
 
 ; (defn new-transaction
 ;   [transaction-details]
