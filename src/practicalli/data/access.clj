@@ -22,9 +22,8 @@
 
   []
 
-  (do
-    (println "SERVICE LAYER: create-record")
-    (crux/submit-tx crux [[:crux.tx/put manifest]])))
+  ((println "SERVICE LAYER: create-record")
+   (crux/submit-tx crux [[:crux.tx/put manifest]])))
 ;; => #'practicalli.data.access/create-record
 
   ;; (crux/entity (crux/db crux) :manifest))
@@ -35,29 +34,28 @@
 
 
 
-(defn read-record
-  "Insert a single record into the database using a managed connection.
-  Arguments:
-  - table - name of database table to be affected
-  - record-data - Clojure data representing a new record
-  - db-spec - database specification to establish a connection"
-  ; [db-spec sql-query]
-  []
-  (crux/entity (crux/db crux) :manifest))
+;; (defn read-record
+;;   "Insert a single record into the database using a managed connection.
+;;   Arguments:
+;;   - table - name of database table to be affected
+;;   - record-data - Clojure data representing a new record
+;;   - db-spec - database specification to establish a connection"
+;;   ; [db-spec sql-query]
+;;   []
+;;   (crux/entity (crux/db crux) :manifest))
 
 
-; (defn update-record
-;   "Insert a single record into the database using a managed connection.
-;   Arguments:
-;   - table - name of database table to be affected
-;   - record-data - Clojure data representing a new record
-;   - db-spec - database specification to establish a connection
-;   - where-clause - column and value to identify a record to update"
-;   [db-spec table record-data where-clause]
-;   (with-open [connection (jdbc/get-connection db-spec)]
-;     (jdbc-sql/update!
-;      connection
-;      table
-;      record-data
-;      where-clause
-;      jdbc/snake-kebab-opts)))
+
+;; (defn create-record
+;;   "Insert a single record into the database using a managed connection.
+;;   Arguments:
+;;   - table - name of database table to be affected
+;;   - record-data - Clojure data representing a new record
+;;   - db-spec - database specification to establish a connection"
+;;   [db-spec table record-data]
+;;   (with-open [connection (jdbc/get-connection db-spec)]
+;;     (jdbc-sql/insert!
+;;      connection
+;;      table
+;;      record-data
+;;      jdbc/snake-kebab-opts)))

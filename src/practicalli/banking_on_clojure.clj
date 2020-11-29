@@ -2,20 +2,21 @@
   (:gen-class)
   (:require
    [org.httpkit.server :as app-server]
-   [compojure.core :refer [defroutes GET POST]]
+   [ring.middleware.json :refer [wrap-json-response]]
+   [compojure.core :refer [defroutes POST]]
    [practicalli.request-handler :as handler]))
 
-
+(use '[ring.middleware.json :only [wrap-json-body]])
 ;; Request Routing
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defroutes app
-  (GET "/"         [] handler/welcome-page)
-  (GET "/accounts" [] handler/accounts-overview-page)
-  (GET "/account"  [] handler/account-history)
-  (GET "/transfer" [] handler/money-transfer)
-  (GET "/payment"  [] handler/money-payment)
-  (GET "/register" [] handler/register-customer))
+(defroutes handler
+  (POST "/charge" [] handler/post-charge))
+
+(def app
+  (-> handler
+      wrap-json-response
+      wrap-json-body))
 
 
 ;; System
@@ -27,7 +28,6 @@
 
 (defn app-server-start
   "Start the application server and log the time of start."
-
   [http-port]
   (println (str (java.util.Date.)
                 " INFO: Starting server on port: " http-port))
@@ -36,7 +36,7 @@
 
 
 (defn app-server-stop
-  "Gracefully shutdown the server, waiting 100ms.  Log the time of shutdown"
+  "Gracefully shutdown the server, waiting 100ms.  Log the time of shutdown."
   []
   (when-not (nil? @app-server-instance)
     (@app-server-instance :timeout 100)
@@ -47,18 +47,13 @@
 
 (defn app-server-restart
   "Convenience function to stop and start the application server"
-
   [http-port]
   (app-server-stop)
   (app-server-start http-port))
 
 
 (defn -main
-  "Select a value for the http port the app-server will listen to
-  and call app-server-start
-
-  The http port is either an argument passed to the function,
-  an operating system environment variable or a default value."
+  "Start web server to listen on port 8888."
 
   [& [http-port]]
   (let [http-port (Integer. (or http-port (System/getenv "PORT") "8888"))]
