@@ -18,468 +18,78 @@ clj::user=>
 
 ; Jack-in done.
 clj::user=>
-; Syntax error compiling at (src/practicalli/data/specs.clj:100:7).
-; No such namespace: crux
-clojure.lang.Compiler/analyze (Compiler.java:6808)
-clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3820)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler/access$300 (Compiler.java:38)
-clojure.lang.Compiler$DefExpr$Parser/parse (Compiler.java:596)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7107)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler/eval (Compiler.java:7181)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
 ; Evaluating file: specs.clj
 nil
 clj::practicalli.data.specs=>
-; Syntax error compiling at (src/practicalli/data/specs.clj:109:5).
-; Unable to resolve symbol: charge1 in this context
-clojure.lang.Compiler/analyze (Compiler.java:6808)
-clojure.lang.Compiler$VectorExpr/parse (Compiler.java:3260)
-clojure.lang.Compiler/analyze (Compiler.java:6791)
-clojure.lang.Compiler$VectorExpr/parse (Compiler.java:3260)
-clojure.lang.Compiler/analyze (Compiler.java:6791)
-clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
-clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
-clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler/eval (Compiler.java:7174)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
-; Execution error (ExceptionInfo) at practicalli.data.specs/eval22135 (REPL:96).
-; Unable to construct gen at: [:charge/type] for: :charge/type
-clojure.spec.alpha/gensub (alpha.clj:282)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/map-spec-impl (alpha.clj:877)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/map (core.clj:2746)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/concat (core.clj:725)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/every? (core.clj:2679)
-clojure.core/every? (core.clj:2672)
-clojure.spec.alpha/map-spec-impl (alpha.clj:883)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.Cons/next (Cons.java:39)
-clojure.lang.RT/boundedLength (RT.java:1792)
-clojure.core/apply (core.clj:665)
-clojure.core/apply (core.clj:660)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/gen (alpha.clj:296)
-clojure.spec.alpha/gen (alpha.clj:285)
-clojure.spec.alpha/gen (alpha.clj:295)
-clojure.spec.alpha/gen (alpha.clj:285)
-practicalli.data.specs/eval22135 (NO_SOURCE_FILE:96)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-nil
-clj::practicalli.data.specs=>
-; Execution error (ExceptionInfo) at practicalli.data.specs/eval23056 (REPL:92).
-; Unable to construct gen at: [:charge/type] for: :charge/type
-clojure.spec.alpha/gensub (alpha.clj:282)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/map-spec-impl (alpha.clj:877)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/map (core.clj:2746)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/concat (core.clj:725)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/every? (core.clj:2679)
-clojure.core/every? (core.clj:2672)
-clojure.spec.alpha/map-spec-impl (alpha.clj:883)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.Cons/next (Cons.java:39)
-clojure.lang.RT/boundedLength (RT.java:1792)
-clojure.core/apply (core.clj:665)
-clojure.core/apply (core.clj:660)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/gen (alpha.clj:296)
-clojure.spec.alpha/gen (alpha.clj:285)
-clojure.spec.alpha/gen (alpha.clj:295)
-clojure.spec.alpha/gen (alpha.clj:285)
-practicalli.data.specs/eval23056 (NO_SOURCE_FILE:92)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-; Execution error at practicalli.data.specs/eval24937 (REPL:1).
-; Unable to resolve spec: :charge
-; Evaluation of file specs.clj failed: class clojure.lang.Compiler$CompilerException
-
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-nil
-clj::practicalli.data.specs=>
-; Execution error (ExceptionInfo) at practicalli.data.specs/eval25823 (REPL:97).
-; Unable to construct gen at: [:charge/type] for: :charge/type
-clojure.spec.alpha/gensub (alpha.clj:282)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/map-spec-impl (alpha.clj:877)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/map (core.clj:2746)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/concat (core.clj:725)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.RT/seq (RT.java:535)
-clojure.core/seq (core.clj:137)
-clojure.core/every? (core.clj:2679)
-clojure.core/every? (core.clj:2672)
-clojure.spec.alpha/map-spec-impl (alpha.clj:883)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.core/map (core.clj:2760)
-clojure.lang.LazySeq/sval (LazySeq.java:42)
-clojure.lang.LazySeq/seq (LazySeq.java:51)
-clojure.lang.Cons/next (Cons.java:39)
-clojure.lang.RT/boundedLength (RT.java:1792)
-clojure.core/apply (core.clj:665)
-clojure.core/apply (core.clj:660)
-clojure.spec.alpha/merge-spec-impl (alpha.clj:1213)
-clojure.spec.alpha/gensub (alpha.clj:279)
-clojure.spec.alpha/gensub (alpha.clj:272)
-clojure.spec.alpha/gen (alpha.clj:296)
-clojure.spec.alpha/gen (alpha.clj:285)
-clojure.spec.alpha/gen (alpha.clj:295)
-clojure.spec.alpha/gen (alpha.clj:285)
-practicalli.data.specs/eval25823 (NO_SOURCE_FILE:97)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-; Execution error at practicalli.data.specs/eval25918 (REPL:1).
-; Unable to resolve spec: :type-charge?
-; Evaluation of file specs.clj failed: class clojure.lang.Compiler$CompilerException
-
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-; Syntax error compiling def at (src/practicalli/data/specs.clj:63:1).
-; First argument to def must be a Symbol
-; Evaluation of file specs.clj failed: class clojure.lang.Compiler$CompilerException
-
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-nil
-clj::practicalli.data.specs=>
-{:line-item/description "vr0Ey5kWgK919g"
- :line-item/merchant-info "jnAupMCFc409g53tQd13"
- :line-item/id #uuid "4b91de37-e3da-4f58-bd25-52dd11280134"
- :line-item/account-id #uuid "66c6b090-0e50-4fe5-9855-be16c28fdd8c"
- :line-item/product-id #uuid "e9979591-13fe-4d9a-8adb-f4b14121ecbf"
- :line-item/interest-rate 0.022795722383307293
- :line-item/amount-cents -369.53125
- :charge/type :CHARGE}
-clj::practicalli.data.specs=>
-; Syntax error compiling at (src/practicalli/data/specs.clj:120:21).
-; No such var: eql/project
-clojure.lang.Compiler/analyze (Compiler.java:6808)
-clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3820)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler$VectorExpr/parse (Compiler.java:3260)
-clojure.lang.Compiler/analyze (Compiler.java:6791)
-clojure.lang.Compiler$MapExpr/parse (Compiler.java:3104)
-clojure.lang.Compiler/analyze (Compiler.java:6797)
-clojure.lang.Compiler$InvokeExpr/parse (Compiler.java:3888)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7109)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler$BodyExpr$Parser/parse (Compiler.java:6120)
-clojure.lang.Compiler$FnMethod/parse (Compiler.java:5467)
-clojure.lang.Compiler$FnExpr/parse (Compiler.java:4029)
-clojure.lang.Compiler/analyzeSeq (Compiler.java:7105)
-clojure.lang.Compiler/analyze (Compiler.java:6789)
-clojure.lang.Compiler/eval (Compiler.java:7174)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-; Syntax error (FileNotFoundException) compiling at (src/practicalli/data/specs.clj:1:1).
-; Could not locate crux/eql_project__init.class, crux/eql_project.clj or crux/eql_project.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
-; Evaluation of file specs.clj failed: class clojure.lang.Compiler$CompilerException
-
-clj::practicalli.data.specs=>
-; Evaluating file: specs.clj
-nil
-clj::practicalli.data.specs=>
-[{:crux.tx/tx-time #inst "2020-11-11T18:39:48.433-00:00"
+[{:crux.tx/tx-time #inst "2020-11-29T15:06:06.017-00:00"
   :crux.tx/tx-id 0
-  :crux.db/valid-time #inst "2020-11-11T18:39:48.433-00:00"
+  :crux.db/valid-time #inst "2020-11-29T15:06:06.017-00:00"
   :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
 clj::practicalli.data.specs=>
-; Execution error - invalid arguments to crux.query/normalize-and-conform-query$fn at (query.clj:237).
-; :?line-item/charge - failed: logic-var? at: [:find :project :logic-var] spec: :crux.query/find-arg
-eql/project - failed: aggregate? at: [:find :aggregate :aggregate-fn] spec: :crux.query/aggregate
-(eql/project :?line-item/charge [*]) - failed: logic-var? at: [:find :logic-var] spec: :crux.query/find-arg
-crux.query/normalize-and-conform-query (query.clj:237)
-crux.lru/new-cache (lru.clj:34)
-crux.query/normalize-and-conform-query (query.clj:232)
-crux.query/normalize-and-conform-query (query.clj:224)
-crux.query.QueryDatasource/openQuery (query.clj:1757)
-crux.query.QueryDatasource/query (query.clj:1728)
-crux.api/eval21565 (api.clj:326)
-crux.api/eval21420 (api.clj:233)
-practicalli.data.specs/eval33719 (NO_SOURCE_FILE:120)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=> 
-; Execution error - invalid arguments to crux.query/normalize-and-conform-query$fn at (query.clj:237).
-; :?line-item/charge - failed: logic-var? at: [:find :project :logic-var] spec: :crux.query/find-arg
-eql/project - failed: aggregate? at: [:find :aggregate :aggregate-fn] spec: :crux.query/aggregate
-(eql/project :?line-item/charge [*]) - failed: logic-var? at: [:find :logic-var] spec: :crux.query/find-arg
-crux.query/normalize-and-conform-query (query.clj:237)
-crux.lru/new-cache (lru.clj:34)
-crux.query/normalize-and-conform-query (query.clj:232)
-crux.query/normalize-and-conform-query (query.clj:224)
-crux.query.QueryDatasource/openQuery (query.clj:1757)
-crux.query.QueryDatasource/query (query.clj:1728)
-crux.api/eval21565 (api.clj:326)
-crux.api/eval21420 (api.clj:233)
-practicalli.data.specs/eval33781 (NO_SOURCE_FILE:120)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=> 
-#{}
-clj::practicalli.data.specs=> 
-[{:crux.tx/tx-time #inst "2020-11-11T18:39:48.433-00:00",
-  :crux.tx/tx-id 0,
-  :crux.db/valid-time #inst "2020-11-11T18:39:48.433-00:00",
-  :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
-clj::practicalli.data.specs=> 
-#{}
-clj::practicalli.data.specs=> 
-; Execution error - invalid arguments to crux.query/normalize-and-conform-query$fn at (query.clj:237).
-; {:find [(eql/project ?line-item/charge [*])]} - failed: (contains? % :where) spec: :crux.query/query
-crux.query/normalize-and-conform-query (query.clj:237)
-crux.lru/new-cache (lru.clj:34)
-crux.query/normalize-and-conform-query (query.clj:232)
-crux.query/normalize-and-conform-query (query.clj:224)
-crux.query.QueryDatasource/openQuery (query.clj:1757)
-crux.query.QueryDatasource/query (query.clj:1728)
-crux.api/eval21565 (api.clj:326)
-crux.api/eval21420 (api.clj:233)
-practicalli.data.specs/eval34272 (NO_SOURCE_FILE:120)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=> 
-#{}
-clj::practicalli.data.specs=> 
-[{:crux.tx/tx-time #inst "2020-11-11T18:39:48.433-00:00",
-  :crux.tx/tx-id 0,
-  :crux.db/valid-time #inst "2020-11-11T18:39:48.433-00:00",
-  :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
-clj::practicalli.data.specs=> 
-#{[{:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c",
-    :account-id "8c899527-fe21-490a-ae45-a58488540806",
-    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089",
-    :interest-rate 4.5,
+#{[{:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
     :amount-cents 1800}]}
-clj::practicalli.data.specs=> 
-; Execution error - invalid arguments to crux.query/normalize-and-conform-query$fn at (query.clj:237).
-; (quote [[?line-item/charge :line-item/id "24e56a67-0559-4baa-a16e-9fab034cc84c"]]) - failed: vector? at: [:where] spec: :crux.query/where
-crux.query/normalize-and-conform-query (query.clj:237)
-crux.lru/new-cache (lru.clj:34)
-crux.query/normalize-and-conform-query (query.clj:232)
-crux.query/normalize-and-conform-query (query.clj:224)
-crux.query.QueryDatasource/openQuery (query.clj:1757)
-crux.query.QueryDatasource/query (query.clj:1728)
-crux.api/eval21565 (api.clj:326)
-crux.api/eval21420 (api.clj:233)
-practicalli.data.specs/eval34697 (NO_SOURCE_FILE:120)
-clojure.lang.Compiler/eval (Compiler.java:7177)
-clojure.core/eval (core.clj:3214)
-clojure.core/eval (core.clj:3210)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.core/apply (core.clj:665)
-clojure.core/with-bindings* (core.clj:1973)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
-clojure.main/repl (main.clj:437)
-clojure.main/repl (main.clj:458)
-clojure.main/repl (main.clj:368)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
-nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
-nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
-nrepl.middleware.session/session-exec (session.clj:202)
-nrepl.middleware.session/session-exec (session.clj:201)
-java.lang.Thread/run (Thread.java:832)
-clj::practicalli.data.specs=> 
-#{[{:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c",
-    :account-id "8c899527-fe21-490a-ae45-a58488540806",
-    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089",
-    :interest-rate 4.5,
+clj::practicalli.data.specs=>
+[{:crux.tx/tx-time #inst "2020-11-29T15:06:48.568-00:00"
+  :crux.tx/tx-id 0
+  :crux.db/valid-time #inst "2020-11-29T15:06:48.568-00:00"
+  :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
+clj::practicalli.data.specs=>
+#'practicalli.data.specs/payment1
+clj::practicalli.data.specs=>
+#:crux.tx{:tx-id 1, :tx-time #inst "2020-11-29T15:22:05.231-00:00"}
+clj::practicalli.data.specs=>
+#{[{:crux.db/id "d775a8a3-9ca6-4176-8b8c-ddc2fb9458b4"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
     :amount-cents 1800}]}
-clj::practicalli.data.specs=> 
+clj::practicalli.data.specs=>
+
+
+
+
+#{[{:crux.db/id "d775a8a3-9ca6-4176-8b8c-ddc2fb9458b4"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
+    :amount-cents 1800}]}
+clj::practicalli.data.specs=>
+#{[{:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
+    :amount-cents 1800}]}
+clj::practicalli.data.specs=>
+#:crux.tx{:tx-id 3, :tx-time #inst "2020-11-29T15:23:57.716-00:00"}
+clj::practicalli.data.specs=>
+#{[{:crux.db/id "24e56a67-0559-4baa-a16e-9fab034cc84c"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
+    :amount-cents 1800}]}
+clj::practicalli.data.specs=>
+#{[{:crux.db/id "d775a8a3-9ca6-4176-8b8c-ddc2fb9458b4"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 4.5
+    :amount-cents 1800}]}
+clj::practicalli.data.specs=>
+[{:crux.tx/tx-time #inst "2020-11-29T15:24:24.692-00:00"
+  :crux.tx/tx-id 0
+  :crux.db/valid-time #inst "2020-11-29T15:24:24.692-00:00"
+  :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
+clj::practicalli.data.specs=>
+[{:crux.tx/tx-time #inst "2020-11-29T15:24:38.703-00:00"
+  :crux.tx/tx-id 0
+  :crux.db/valid-time #inst "2020-11-29T15:24:38.703-00:00"
+  :crux.db/content-hash #crux/id "4eec3993a969f0c6a62ea9570897d58da19c776f"}]
+clj::practicalli.data.specs=>
+#{[{:crux.db/id "d775a8a3-9ca6-4176-8b8c-ddc2fb9458b4"
+    :account-id "8c899527-fe21-490a-ae45-a58488540806"
+    :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+    :interest-rate 0
+    :amount-cents 1500}]}
+clj::practicalli.data.specs=>
