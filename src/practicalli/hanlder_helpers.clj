@@ -6,10 +6,8 @@
 ;; Create
 
 (defn post-charge
-  [charge-json]
-  (prn charge-json
-    ;; create-record
-       ))
+  [charge-json account_id]
+  (create-record charge-json account_id))
 
 
 ;; (defn new-customer

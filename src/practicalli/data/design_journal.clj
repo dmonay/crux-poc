@@ -8,10 +8,11 @@
 (ns practicalli.data.design-journal
   (:require [clojure.spec.alpha :as spec]
             [clojure.spec.gen.alpha :as spec-gen]
-            [clojure.spec.test.alpha :as spec-test]
+            ;; [clojure.spec.test.alpha :as spec-test]
             [next.jdbc :as jdbc]
             [next.jdbc.sql :as jdbc-sql]
-            [next.jdbc.specs :as jdbc-spec]))
+            ;; [next.jdbc.specs :as jdbc-spec]
+            ))
 
 ;; Rich comment block with redefined vars ignored
 #_{:clj-kondo/ignore [:redefined-var]}
@@ -49,10 +50,10 @@
     [db-spec table record-data]
     (with-open [connection (jdbc/get-connection db-spec)]
       (jdbc-sql/insert!
-        connection
-        table
-        record-data
-        jdbc/snake-kebab-opts)))
+       connection
+       table
+       record-data
+       jdbc/snake-kebab-opts)))
 
   (defn read-record
     "Insert a single record into the database using a managed connection.
@@ -71,41 +72,38 @@
   (defn register-customer
     [customer-details]
     (create-record
-      db-specification-dev
-      :public.account_holders
-      customer-details))
+     db-specification-dev
+     :public.account_holders
+     customer-details))
 
   (defn customer-details
     [customer-id]
     (read-record
-      db-specification-dev
-      ["select * from public.account_holders where id = ?" customer-id])
-    )
-
-  ) ;; End of rich comment block
+     db-specification-dev
+     ["select * from public.account_holders where id = ?" customer-id]))) ;; End of rich comment block
 
 (comment
 
   (register-customer
-    (spec-gen/generate (spec/gen :customer/unregistered)))
+   (spec-gen/generate (spec/gen :customer/unregistered)))
 
   ;; Register a customer and use the returned uuid to get that customers details
   (customer-details
-    (:account-holders/id (register-customer
-                           (spec-gen/generate (spec/gen :customer/unregistered)))))
+   (:account-holders/id (register-customer
+                         (spec-gen/generate (spec/gen :customer/unregistered)))))
   ;; => [#:ACCOUNT_HOLDERS{:ID #uuid "a752d1eb-42f4-412f-90e7-f8f185f6761b", :LEGAL_NAME "MV0lFDATSZ7zL7Cl8q0", :EMAIL_ADDRESS "o61HRbJU4MQg2l2veGB2U84nR2", :RESIDENTIAL_ADDRESS "EAnhE1NKSX1L06yjIxj271R2", :SOCIAL_SECURITY_NUMBER "VAt0Jg", :PREFERRED_NAME nil}]
 
 
   #_(new-account-holder
-      (practicalli.specifications-banking/mock-data-customer-details))
+     (practicalli.specifications-banking/mock-data-customer-details))
   ;; => #:account-holders{:account-holder-id #uuid "036ecad3-138d-4467-b161-56cbcb9730aa"}
 
   #_(new-account-holder
-      #:practicalli.specification-banking{:first_name             "Rachel"
-                                          :last_name              "Requests"
-                                          :email_address          "rach@requests.org"
-                                          :residential_address    "1 Emotive Drive, Altar IV"
-                                          :social_security_number "AB140123D"})
+     #:practicalli.specification-banking{:first_name             "Rachel"
+                                         :last_name              "Requests"
+                                         :email_address          "rach@requests.org"
+                                         :residential_address    "1 Emotive Drive, Altar IV"
+                                         :social_security_number "AB140123D"})
   ;; => #:account-holders{:account-holder-id #uuid "a7e7c9a3-b007-424f-8702-1c8908a8d8ba"}
   )
 
@@ -127,21 +125,21 @@
   ;; Data to send to the database
   (spec/def :customer/unregistered
     (spec/keys
-      :req [:customer/legal-name
-            :customer/email-address
-            :customer/residential-address
-            :customer/social-security-number]
-      :opt [:customer/preferred-name]))
+     :req [:customer/legal-name
+           :customer/email-address
+           :customer/residential-address
+           :customer/social-security-number]
+     :opt [:customer/preferred-name]))
 
 
   ;; Data received from the database
   (spec/def :customer/registered
     (spec/keys
-      :req [:customer/legal-name
-            :customer/email-address
-            :customer/residential-address
-            :customer/social-security-number]
-      :opt [:customer/preferred-name]))
+     :req [:customer/legal-name
+           :customer/email-address
+           :customer/residential-address
+           :customer/social-security-number]
+     :opt [:customer/preferred-name]))
 
 
   ;; This design seems so obvious now, but its had me going round in circles trying to optomise for weeks.
@@ -151,9 +149,7 @@
   ;; => #:customer{:legal-name "7hl4PT89AO3Pe04958YBWxWH0m6tnG", :email-address "iz83P60EtVM9lMX6zg6", :residential-address "FJ7Mh6nNJviX", :social-security-number "9bYAS85axW42KnOPcPjMtkg06qb4Tr"}
   (spec-gen/generate (spec/gen :customer/registered))
   ;; => #:customer{:preferred-name "S8i45tGAgaO60uPVW6q48Emg1", :legal-name "FFsv7pCavtC5V9qD52wO91i9Y", :email-address "6Wl3O11i3L66q800f3JcgkQ7414V0", :residential-address "vzl93YDnD74Zh5", :social-security-number "120J"}
-
-
-  ) ;; End of rich comment block
+) ;; End of rich comment block
 
 
 
@@ -200,7 +196,7 @@
     (with-open [connection (jdbc/get-connection data-spec)]
       (jdbc/with-transaction [transaction connection]
         (doseq [sql-statement table-schemas]
-          (jdbc/execute! transaction sql-statement) ))))
+          (jdbc/execute! transaction sql-statement)))))
   (defn show-schema
     [db-spec table-name]
     (with-open [connection (jdbc/get-connection db-spec)]
@@ -215,10 +211,10 @@
                   db-specification-dev)
 
   #_(create-tables!
-      [schema-account-holders-table
-       schema-accounts-table
-       schema-transaction-history-table]
-      db-specification-dev)
+     [schema-account-holders-table
+      schema-accounts-table
+      schema-transaction-history-table]
+     db-specification-dev)
 
   ;; View application table schema in development database
   (show-schema db-specification-dev "PUBLIC.ACCOUNT_HOLDERS")
@@ -256,8 +252,8 @@
 
   (spec/def ::account-holder
     (spec/keys
-      :req [::id ::legal-name ::email-address ::residential-address ::social-security-number]
-      :opt [::preferred-name]))
+     :req [::id ::legal-name ::email-address ::residential-address ::social-security-number]
+     :opt [::preferred-name]))
 
 
   (spec-gen/generate (spec/gen ::account-holder))
@@ -265,8 +261,8 @@
 
   (spec/def ::customer
     (spec/keys
-      :req [::id ::legal-name ::email-address ::residential-address ::social-security-number]
-      :opt [::preferred-name]))
+     :req [::id ::legal-name ::email-address ::residential-address ::social-security-number]
+     :opt [::preferred-name]))
 
 
   (spec-gen/generate (spec/gen ::account-holder))
@@ -276,8 +272,8 @@
 
   (spec/def :customer/details
     (spec/keys
-      :req [::legal-name ::email-address ::residential-address ::social-security-number]
-      :opt [::preferred-name]))
+     :req [::legal-name ::email-address ::residential-address ::social-security-number]
+     :opt [::preferred-name]))
 
 
   (spec-gen/generate (spec/gen :customer/details))
@@ -286,13 +282,7 @@
 
   ;; Using autoresolve spec in a test, then define use a specific namespace
   ;; or use an alias that is the same (but aliases cannot all be the same)
-
-
-
-
-
-
-  ) ;; End of Rich comment block
+) ;; End of Rich comment block
 
 
 ;; Rich comment block with redefined vars ignored
@@ -316,12 +306,12 @@
   ;; Account holder - composite specification
   (spec/def :account-holder/details
     (spec/keys
-      :req [:account-holder/id
-            :account-holder/legal-name
-            :account-holder/email-address
-            :account-holder/residential-address
-            :account-holder/social-security-number]
-      :opt [:account-holder/preferred-name]))
+     :req [:account-holder/id
+           :account-holder/legal-name
+           :account-holder/email-address
+           :account-holder/residential-address
+           :account-holder/social-security-number]
+     :opt [:account-holder/preferred-name]))
 
 
   (spec-gen/generate (spec/gen :account-holder/details))
@@ -342,11 +332,11 @@
   ;; Account holder - composite specification
   (spec/def :customer/details
     (spec/keys
-      :req [:customer/legal-name
-            :customer/email-address
-            :customer/residential-address
-            :customer/social-security-number]
-      :opt [:customer/preferred-name]))
+     :req [:customer/legal-name
+           :customer/email-address
+           :customer/residential-address
+           :customer/social-security-number]
+     :opt [:customer/preferred-name]))
 
 
   (spec-gen/generate (spec/gen :customer/details))
@@ -371,21 +361,21 @@
   ;; Details to send to the database
   (spec/def :customer/unregistered
     (spec/keys
-      :req [:customer/legal-name
-            :customer/email-address
-            :customer/residential-address
-            :customer/social-security-number]
-      :opt [:customer/preferred-name]))
+     :req [:customer/legal-name
+           :customer/email-address
+           :customer/residential-address
+           :customer/social-security-number]
+     :opt [:customer/preferred-name]))
 
 
   ;; Details recieved from the database
   (spec/def :customer/registered
     (spec/keys
-      :req [:customer/legal-name
-            :customer/email-address
-            :customer/residential-address
-            :customer/social-security-number]
-      :opt [:customer/preferred-name]))
+     :req [:customer/legal-name
+           :customer/email-address
+           :customer/residential-address
+           :customer/social-security-number]
+     :opt [:customer/preferred-name]))
 
 
   ;; This seems so obvious now, but its had me going round in circles trying to optomise for weeks.
@@ -395,6 +385,4 @@
   ;; => #:customer{:legal-name "7hl4PT89AO3Pe04958YBWxWH0m6tnG", :email-address "iz83P60EtVM9lMX6zg6", :residential-address "FJ7Mh6nNJviX", :social-security-number "9bYAS85axW42KnOPcPjMtkg06qb4Tr"}
   (spec-gen/generate (spec/gen :customer/registered))
 ;; => #:customer{:preferred-name "S8i45tGAgaO60uPVW6q48Emg1", :legal-name "FFsv7pCavtC5V9qD52wO91i9Y", :email-address "6Wl3O11i3L66q800f3JcgkQ7414V0", :residential-address "vzl93YDnD74Zh5", :social-security-number "120J"}
-
-
-  ) ;; End of rich comment block
+) ;; End of rich comment block

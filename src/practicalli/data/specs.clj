@@ -5,40 +5,9 @@
    [crux.api :as crux]
 
    ; eql for projection syntax:
-
-
    [clojure.spec.alpha     :as spec]
    [clojure.spec.gen.alpha :as spec-gen]))
 
-
-
-;; Customer detail specifications
-(spec/def :customer/id uuid?)
-(spec/def :customer/legal-name string?)
-(spec/def :customer/email-address string?)
-(spec/def :customer/residential-address string?)
-(spec/def :customer/social-security-number string?)
-(spec/def :customer/preferred-name string?)
-
-;; Data to send to the database
-(spec/def :customer/unregistered
-  (spec/keys
-   :req [:customer/legal-name
-         :customer/email-address
-         :customer/residential-address
-         :customer/social-security-number]
-   :opt [:customer/preferred-name]))
-
-
-;; Data received from the database
-(spec/def :customer/registered
-  (spec/keys
-   :req [:customer/id
-         :customer/legal-name
-         :customer/email-address
-         :customer/residential-address
-         :customer/social-security-number]
-   :opt [:customer/preferred-name]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;          OUR CODE           ;;;;;;;;;;;;;;;;;;;;;;;;;;

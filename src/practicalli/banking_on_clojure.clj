@@ -2,16 +2,15 @@
   (:gen-class)
   (:require
    [org.httpkit.server :as app-server]
-   [ring.middleware.json :refer [wrap-json-response]]
+   [ring.middleware.json :refer [wrap-json-response wrap-json-body]]
    [compojure.core :refer [defroutes POST]]
    [practicalli.request-handler :as handler]))
 
-(use '[ring.middleware.json :only [wrap-json-body]])
 ;; Request Routing
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defroutes handler
-  (POST "/charge" [] handler/post-charge))
+  (POST "/accounts/:account_id/line_items/charges" [] handler/post-charge))
 
 (def app
   (-> handler

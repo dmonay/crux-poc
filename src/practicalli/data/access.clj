@@ -1,61 +1,41 @@
 (ns practicalli.data.access
   (:require
-   [crux.api :as crux]))
+   [crux.api :as crux]
+  ;;  [clojure.spec.alpha     :as spec]
+  ;;  [clojure.spec.gen.alpha :as spec-gen]
+   ))
+
+   ;; Data access
+  ;;  [practicalli.data.specs :as schema]))
 
 ;; MAIN CRUX IN-MEMORY NODE
 (def crux
   (crux/start-node {}))
 
-;; SAMPLE ENTITY SCHEMA
-(def manifest
-  {:crux.db/id :manifest
-   :pilot-name "Johanna"
-   :id/rocket "SB002-sol"
-   :id/employee "22910x2"
-   :badges "SETUP"
-   :cargo ["stereo" "gold fish" "slippers" "secret note"]})
 
 
 (defn create-record
-  "Insert a single record into the database .
-  Arguments:"
+  "Insert a single record into the database.
+  Arguments:
+   - data: raw charge input
+   - account_id: account_id"
 
-  []
+  [charge-json account_id]
 
-  ((println "SERVICE LAYER: create-record")
-   (crux/submit-tx crux [[:crux.tx/put manifest]])))
-;; => #'practicalli.data.access/create-record
+  (do
+    (println "SERVICE LAYER: create-record" charge-json)
 
-  ;; (crux/entity (crux/db crux) :manifest))
-  ; (crux/entity-history (crux/db crux) :manifest :asc))
+    (println "SERVICE LAYER: account_id is:  " account_id)
 
-
-
-
-
-
-;; (defn read-record
-;;   "Insert a single record into the database using a managed connection.
-;;   Arguments:
-;;   - table - name of database table to be affected
-;;   - record-data - Clojure data representing a new record
-;;   - db-spec - database specification to establish a connection"
-;;   ; [db-spec sql-query]
-;;   []
-;;   (crux/entity (crux/db crux) :manifest))
+    (def charge1
+      {:crux.db/id (java.util.UUID/randomUUID)
+       :account-id account_id
+       :product-id "f0b06263-73c3-44a8-a261-ec0e419ef089"
+       :interest-rate (charge-json :rate)
+       :amount-cents (charge-json :amount_cents)})
 
 
+    (crux/await-tx crux
+                   (crux/submit-tx crux [[:crux.tx/put charge1]]))))
 
-;; (defn create-record
-;;   "Insert a single record into the database using a managed connection.
-;;   Arguments:
-;;   - table - name of database table to be affected
-;;   - record-data - Clojure data representing a new record
-;;   - db-spec - database specification to establish a connection"
-;;   [db-spec table record-data]
-;;   (with-open [connection (jdbc/get-connection db-spec)]
-;;     (jdbc-sql/insert!
-;;      connection
-;;      table
-;;      record-data
-;;      jdbc/snake-kebab-opts)))
+
